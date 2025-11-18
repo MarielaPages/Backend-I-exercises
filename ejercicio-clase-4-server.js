@@ -16,10 +16,15 @@ server.on('error', error => {
 }) //Manejo de errores
 
 
+let products = new ProductManager('./productos.json')
+
+console.log(products.getProducts())
+
 //Peticiones get
 app.get('/products', (req, res) => {
 
-    res.send()
+    res.send(products.getProducts())
+
 })
 
-app.get()
+//app.get()
