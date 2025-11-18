@@ -25,4 +25,10 @@ app.get('/products', async (req, res) => {
 
 })
 
-//app.get()
+app.get('/products/:pid', async(req, res) => {
+    
+    const {pid} = req.params
+
+    res.send(await products.getProductById(pid))
+
+})
