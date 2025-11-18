@@ -18,12 +18,10 @@ server.on('error', error => {
 
 let products = new ProductManager('./productos.json')
 
-console.log(products.getProducts())
-
 //Peticiones get
-app.get('/products', (req, res) => {
+app.get('/products', async (req, res) => {
 
-    res.send(products.getProducts())
+    res.send(await products.getProducts())
 
 })
 
